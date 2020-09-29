@@ -1,0 +1,33 @@
+<%- include("../partials/header.ejs")%>
+<%faculty=faculty%>
+<div class="container"> 
+<form action="/faculties/<%=faculty._id%>/add?_method=PUT" method="POST">
+	<div class="form-group" style="margin-top: 10px">
+	
+	
+	<%if(detail=='awardsHonors'){%>
+	<b2>Add Award Detail</b2>
+		<input class="form-control" type="text" name="award">
+	<%}else if(detail=='coursesTaught'){%>
+		Add New Course
+		<input class="form-control" type="text" name="course">
+	<%}else if(detail=='courseNotes'){%>
+		Add Course Note
+		<input class="form-control" type="text" name="note">
+	<%}else{%>
+		ADD SPONSERED PROJECT
+		<input class="form-control" type="text" name="project">
+		<%}%>
+		
+		<div class="container-fluid text-center" style="margin-bottom: 10px;">
+	<button class="btn btn-outline-primary " style="margin-top: 10px;">
+		Add 
+	</button>
+	</div>
+	</div>	
+	
+</form>
+</div>
+
+<%- include("../partials/footer.ejs")%>
+

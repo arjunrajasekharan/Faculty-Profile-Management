@@ -1,0 +1,71 @@
+<%- include("../partials/header.ejs")%>
+<section id="header" class="jumbotron text-center">
+    <h1 class="display-3" style="font-size:5vw;">Publications</h1>
+    <p class="lead text-custom">List of all publications by our faculty:
+
+    </p>
+    <a href="/faculties" class="btn btn-custom">View All Faculty</a>
+  </section>
+
+
+<div class="container-fluid dropdown" style="margin-bottom: 10px;">
+	<h6 style="font-weight:500; margin-left: 5px;">Filter By:</h6>
+	<select class="col-3 col-sm-2" id="filter" onchange="run()" name="publication[type]">
+		<option value="All">All</option>
+		<option value="Journal">Journal</option>
+		<option value="Conference">Conference</option>
+		<option value="Article">Article</option>
+		<option value="Book">Book</option>
+		<option value="Chapter">Chapter</option>
+		<option value="Patent">Patent</option>
+		<option value="Web Page">Web Page</option>
+		<option value="Newspaper">Newspaper</option>
+		<option value="Other">Other</option>
+	</select>
+
+</div>
+
+
+<% var x = 0%>
+<%publications.forEach(function(publication){
+	x++
+})%>
+
+
+
+<div class="container-fluid col-12 col-sm-8">
+	
+<div class="d-flex text-align-right justify-content-end">
+	<h5  style="font-weight: 600;">
+	Total No. of Publications = <%=x%>
+</h5>
+</div>
+
+	
+<ul class="list-group">
+
+<%publications.forEach(function(publication){%>
+	
+	<li class="<%=publication.type%> d-non pubs"><%=publication.id%> - <%-publication.title%> <br><a href="/publications/<%=publication._id%>" class="btn btn-sm btn-outline-primary">view more</a>
+	
+	<%if(publication.isVerified == undefined || publication.isVerified==0){%>
+		
+		<a class="btn btn-warning btn-sm" href="#">not verified</a>
+		
+		<%}else{%>
+		
+			<a class="btn btn-success btn-sm" href="#">verified</a>
+		
+		<%}%>
+	
+	</li>
+
+<%})%>
+	
+	
+</ul>
+</div>
+
+
+
+<%- include("../partials/footer.ejs")%>

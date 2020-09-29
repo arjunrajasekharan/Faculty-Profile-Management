@@ -1,0 +1,156 @@
+<%- include("../partials/header.ejs")%>
+<section id="header" class="jumbotron text-center">
+<h1>
+	<%=faculty.name%>
+</h1>
+	 <p class="lead text-custom"><%=faculty.designation%>
+
+    </p>
+</section>
+
+<div class="row ">
+    <div class="col-md-6 order-1 order-md-2">
+        <img style="margin-left: auto;" src="<%=faculty.image%>" alt="" class="img-fluid" height="600" width="375">
+    </div>
+    <div class="col-md-6 order-2 order-md-1">
+        <div class="row justify-content-center">
+            <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                <p class="lead" style="font-weight: 500;"> (a) Name 					 : <%=faculty.name%><br>
+                    (b) Designation				 : <%=faculty.designation%> <br>
+                    (c) Year of joining 		 : <%=faculty.yearOfJoining%><br>
+                    (d) Highest academic degree  : <%=faculty.highestDegree%><br>
+                    (e) Professional affiliation : <%=faculty.affiliation%><br>
+                    (f) Email					 : <%=faculty.email%><br>
+                    (g) Phone					 : <%=faculty.phone%><br>
+                    
+                    
+                    (h) Resume					 :
+                    
+                    <%
+                    if(faculty.resume== undefined){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.resume%>
+                    <%}%>
+                    <br>
+                    
+                    
+                    (i) Biography				 : 
+                    <%
+                    if(faculty.biography == undefined){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.biography%>
+                    <%}%>
+                    <br>
+                    
+                    
+                    (j) Area of research		 :
+                    <%
+                    if(faculty.areaOfResearch == undefined){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.areaOfResearch%>
+                    <%}%>
+                    <br>
+                    
+                    
+                    (k) Awards Honors			 : 
+                    <%
+                    if(faculty.awardsHonors.length==0){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.awardsHonors%>
+                    <%}%>
+                    <a href="/faculties/<%=faculty._id%>/add/awardsHonors">Add</a>
+                    <br>
+                    
+                    
+                    (l) Courses taught, teaching, and their details : 
+                    <%
+                    if(faculty.coursesTaught.length==0){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.coursesTaught%>
+                    <%}%>
+                    <a href="/faculties/<%=faculty._id%>/add/coursesTaught">Add</a>
+                    <br>
+                    
+                    
+                    (m) Course notes		 	: 
+                    <%
+                    if(faculty.courseNotes.length==0){%>
+                        to be updated
+                    <%}else{%>
+                        <%=faculty.courseNotes%>
+                    <%}%>
+                    <a href="/faculties/<%=faculty._id%>/add/courseNotes">Add</a>
+                    <br>
+					
+					<h3>
+						SPONSERED PROJECTS : 
+				    </h3>
+				    <%
+                    if(faculty.sponseredProjects.length==0){%>
+                        to be updated
+                    <%}else{%>
+                        <h4>
+							<%=faculty.sponseredProjects%>
+				        </h4>
+                    <%}%>
+				    <a href="/faculties/<%=faculty._id%>/add/sponseredprojects">ADD</a>
+				
+				
+                    <%=/*%>
+                    username : <%=faculty.author.username%>
+                    
+                    (n) Key publications		: <%=faculty.name%>
+                    (0) Number of publications  : <%=faculty.name%>
+                    (p) List of publications    : <%=faculty.name%>
+                    (q) Sponsored Projects	    : <%=faculty.name%>
+                    
+                    <%=*/%>
+                    
+                    </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-center" style="margin-bottom: 10px;">
+
+<a class="btn btn-primary" href="/faculties/<%=faculty._id%>/keypublications">View Key Publications</a>
+	
+	
+</div>
+
+<div class="container-fluid text-center" style="margin-bottom: 10px;">
+
+	
+<a class="btn btn-outline-primary" href="/faculties/<%=faculty._id%>/publications">View All Publications</a>
+	
+</div>
+
+<div class="container-fluid text-center" style="margin-bottom: 10px;">
+<a class="btn btn-success" href="/faculties/<%=faculty._id%>/update">Update Faculty Details</a>
+</div>
+
+<div class="container-fluid text-center" style="margin-bottom: 30px;">
+<form action="/faculties/<%=faculty._id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger">
+        Delete Faculty Records
+    </button>
+</form>
+</div>
+
+<style>
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+</style>
+
+<%- include("../partials/footer.ejs")%>

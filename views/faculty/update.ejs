@@ -1,0 +1,68 @@
+<%- include("../partials/header.ejs")%>
+
+
+<form action="/faculties/<%=faculty._id%>?_method=PUT" method="POST">
+
+			<div class="form-group">
+				RESUME :
+				<%if(faculty.resume!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.resume%>" name="faculty[resume]">
+				<%}else{%>
+					<input type="text" class="form-control " placeholder="resume" name="faculty[resume]">
+				<%}%>
+				
+			</div>
+	
+			<div class="form-group">
+				BIOGRAPHY :
+				<%if(faculty.biography!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.biography%>" name="faculty[biography]">
+				<%}else{%>
+					<input type="text" class="form-control " placeholder="biography" name="faculty[biography]">
+				<%}%>
+				
+			</div>
+			<div class="form-group">
+				AREA OF RESEARCH :
+				<%if(faculty.areaOfResearch!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.areaOfResearch%>" name="faculty[areaOfResearch]">
+				<%}else{%>
+					<input type="text" class="form-control " placeholder="area of research" name="faculty[areaOfResearch]">
+				<%}%>
+				
+			</div>
+		<%/* COMMENT.....%>
+			<div class="form-group">
+				<%if(faculty.awardsHonors!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.awardsHonors%>" name="faculty[awardsHonors]">
+				<%}else{%>
+					<input type="text" class="form-control " placeholder="awards honors" name="faculty[awardsHonors]">
+				<%}%>
+				
+			</div>
+
+			<div class="form-group">
+				<%if(faculty.coursesTaught!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.coursesTaught%>" name="faculty[coursesTaught]">
+				<%}else{%>
+					<input type="text" class="form-control " placeholder="courses taught" name="faculty[coursesTaught]">
+				<%}%>
+				
+			</div>
+	
+			<div class="form-group">
+				<%if(faculty.courseNotese!=undefined){%>
+					<input type="text" class="form-control " placeholder="<%=faculty.courseNotese%>" name="faculty[courseNotese]">
+				<%}else{%>
+					<input type="email" class="form-control " placeholder="course notes" name="faculty[courseNotes]">
+				<%}%>
+				
+			</div>
+		<%......COMMENT*/%>
+			<button class="btn btn-success">
+				Submit	
+			</button>
+</form>
+
+
+<%- include("../partials/footer.ejs")%>

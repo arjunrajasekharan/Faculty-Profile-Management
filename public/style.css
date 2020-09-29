@@ -1,0 +1,162 @@
+body{
+	background-color: #d5f3ff;
+}
+
+  #header {
+      background: url("https://i.pinimg.com/originals/bd/a4/29/bda429c881d00df5726576ff9ab2e2b7.jpg") center center / cover no-repeat;
+      color: whitesmoke;
+    }
+
+    .navbar-custom {
+      background-color: #00a7e9;
+    }
+
+    .btn-custom {
+      background-color: lightskyblue;
+      color: darkblue;
+    }
+
+    * {
+      font-family: Raleway;
+    }
+
+.home { 
+	padding-top:40vh;
+	color: black;
+	position:relative;
+	z-index:1;
+	font-weight: 600;
+}
+
+.nav-cus{
+	z-index:1;
+}
+
+.slideshow {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	list-style:none;
+	z-index:0;
+	
+	padding:0;
+}
+
+.slideshow li{
+	
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	
+	z-index:0;
+	
+	animation:imageAnimation 35s linear infinite;
+	background-size:cover;
+	opacity:0;
+	/*background-position:50% 50%;*/
+	
+	
+}
+
+
+.slideshow li:nth-child(1){
+	
+	background-image:url("https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+}
+.slideshow li:nth-child(2){
+	
+	background-image:url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80://windows10wall.com/wp-content/uploads/2014/08/guitar-in-dark-background-wallpaper.jpg");
+	animation-delay:5s;
+}
+
+.slideshow li:nth-child(3){
+	
+	background-image:url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60");
+	animation-delay:10s;
+}
+
+.slideshow li:nth-child(4){
+	
+	background-image:url("https://images.unsplash.com/20/cambridge.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1030&q=80");
+	animation-delay:15s;
+}
+
+.slideshow li:nth-child(5){
+	
+	background-image:url("https://images.unsplash.com/photo-1527142573877-7d395d8fa568?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80");
+	animation-delay:20s;
+}
+
+.slideshow li:nth-child(6){
+	
+	background-image:url("https://images.unsplash.com/photo-1462536943532-57a629f6cc60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80://images-na.ssl-images-amazon.com/images/I/71CVbrlwt9L._SL1280_.jpg");
+	animation-delay:25s;
+}
+
+.slideshow li:nth-child(7){
+	
+	background-image:url("https://www.desktopbackground.org/https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80/2013/01/08/511390_organ-and-piano-hd-wallpapers-free-download-musical-instruments_1600x1200_h.jpg");
+	animation-delay:30s;
+}
+
+@keyframes imageAnimation{
+	
+	0%{
+		opacity:0;
+		animation-timing-function:ease-in;
+	}
+	5.7%{
+		opacity:1;
+		animation-timing-function:ease-out;
+	}
+	14.3%{
+		opacity:1;
+	}
+	20%{
+		opacity:0;
+	}
+}
+
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+
+@media (max-width: 1080px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+
+.blurb h2 {
+   color: darkblue;
+   font-weight: 100;
+   font-size: 2.5rem;
+}
+
+.blurb p {
+    color: darkblue;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+

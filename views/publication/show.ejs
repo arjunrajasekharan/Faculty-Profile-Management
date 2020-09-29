@@ -1,0 +1,45 @@
+<%- include("../partials/header.ejs")%>
+
+<section id="header" class="jumbotron text-center">
+<h1>
+	<%=publication.title%>
+</h1>
+	 <p class="lead text-custom"><%= publication.author.username%>	
+    </p>
+</section>
+<div class="row justify-content-center">
+	<%if(publication.isVerified == undefined || publication.isVerified==0){%>
+		
+		<a class="btn btn-outline-warning btn-sm " href="/faculties/<%=faculty._id%>/publications/<%=publication._id%>/verify"><b>click to verify</b></a>
+		
+		<%}else{%>
+		
+			<a class="btn btn-success btn-sm" href="#">verified</a>
+		
+		<%}%>
+</div>
+
+
+
+
+Id : <%= publication.id%>
+<br>
+Title : <%= publication.title%>
+<br> 
+Year of Publishing  : <%= publication.year%>
+<br>
+Type : <%= publication.type%>
+<br>
+Content : <%= publication.content%>
+
+<br><br>
+<%=/*%>user : <%=publication.author.username%><%=*/%>
+<a class="btn btn-block btn-success"  href="/faculties/<%=faculty._id%>/publications/<%=publication._id%>/edit">edit</a>
+
+<form action="/faculties/<%=faculty._id%>/publications/<%=publication._id%>?_method=DELETE" method="POST">
+	<button class="btn btn-block btn-danger">
+		delete
+	</button>
+</form>
+
+<%- include("../partials/footer.ejs")%>

@@ -1,0 +1,42 @@
+<%- include("../partials/header.ejs")%>
+<section id="header" class="jumbotron text-center">
+    <h1 class="display-3" style="font-size:5vw;">Key Publications</h1>
+    <p class="lead text-custom">Author: <%=faculty.name%>
+
+    </p>
+  </section>
+<div class="container-fluid col-12 col-sm-8">
+	
+
+	
+<ul class="list-group">
+
+<%faculty.keypublications.forEach(function(publication){%>
+	
+	<li><%=publication.id%> - <%-publication.title%> <br><a href="/faculties/<%=faculty._id%>/publications/<%=publication._id%>" class="btn btn-sm btn-outline-primary">view more</a>
+	
+	<%if(publication.isVerified == undefined || publication.isVerified==0){%>
+		
+		<a class="btn btn-warning btn-sm" href="#">not verified</a>
+		
+		<%}else{%>
+		
+			<a class="btn btn-success btn-sm" href="#">verified</a>
+		
+		<%}%>
+	
+	</li>
+
+<%})%>
+	
+	
+</ul>
+</div>
+
+<div class="container-fluid text-center" style="margin-top:20px; margin-bottom: 10px; margin-left: 15px">
+<a class="btn btn-outline-primary" href="/faculties/<%=faculty._id%>/publications/new">+ Add New Publication</a>
+</div>
+
+
+<%- include("../partials/footer.ejs")%>
+
